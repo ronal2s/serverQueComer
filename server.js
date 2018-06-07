@@ -61,7 +61,7 @@ var restaurantsSantiagoData = {
     telephone: "(809)-971-8443", 
     officialPage: "http://fridaysdr.com.do/santiago/"
   },
-  tuQuipe: {
+  tuquipe: {
     startHour: 16, 
     finalHour: 23, 
     telephone: "(809)-734-5304", 
