@@ -65,7 +65,7 @@ var restaurantsSantiagoData = {
     startHour: 16, 
     finalHour: 23, 
     telephone: "(809)-734-5304", 
-    officialPage = "http://www.tuquipe.com/"
+    officialPage: "http://www.tuquipe.com/"
   },
   lacar: {
     startHour: 8, 
