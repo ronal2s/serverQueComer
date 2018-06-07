@@ -22,11 +22,68 @@ var options = {
 var imgPapajohns = [], imgFridays=[], imgDominos = [], imgVictorina = [], imgBurgerKing = [], 
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 
-var santiagoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe"]
-app.get("/santiagodeals", (req, res) =>
+
+var santiagoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe","Lacar"]
+var restaurantsSantiagoData = {
+  papajohns: {
+   startHour: 11,
+   finalHour: 23,
+   telephone: "(809)-489-7272",
+   url: "http://www.papajohns.com.do/"
+  },
+  dominos: {
+    startHour: 11,
+    finalHour: 23,
+    telephone: "(809)-948-4848",
+    url: "https://www.dominos.com.do/"
+  },
+  pizzarelli: {
+    startHour: 11,
+    finalHour: 23, 
+    telephone: "(809)-581-8444", 
+    officialPage: "http://www.pizzarelli.com.do/";
+  },
+  victorina: {
+    startHour: 10, 
+    finalHour: 23,
+    telephone: "(809)-581-0404", 
+    officialPage: "https://www.pollosvictorina.com.do/";
+  },
+  burgerking: {
+    startHour: 7, 
+    finalHour: 23,
+    telephone: "(809)-732-0800", 
+    officialPage: "https://www.burgerking.com.do/";
+  },
+  fridays: {
+    startHour: 12, 
+    finalHour: 23, 
+    telephone: "(809)-971-8443", 
+    officialPage: "http://fridaysdr.com.do/santiago/";
+  },
+  tuQuipe: {
+    startHour: 16, 
+    finalHour: 23, 
+    telephone: "(809)-734-5304", 
+    officialPage = "http://www.tuquipe.com/";
+  },
+  lacar: {
+    startHour: 8, 
+    finalHour: 18, 
+    telephone: "(809)-581-4260", 
+    officialPage: "https://www.lacarbuffets.com/";
+  }
+}
+
+app.get("/santiagotitles", (req, res) =>
 {
   res.send(santiagoRestaurants)
   console.log(santiagoRestaurants)
+})
+
+app.get("/santiagoRestaurantsInfo", (req, res) =>
+{
+  res.send(restaurantsSantiagoData);
 })
 
 //Papajohns
