@@ -29,13 +29,13 @@ var restaurantsSantiagoData = {
    startHour: 11,
    finalHour: 23,
    telephone: "(809)-489-7272",
-   url: "http://www.papajohns.com.do/"
+   officialPage: "http://www.papajohns.com.do/"
   },
   dominos: {
     startHour: 11,
     finalHour: 23,
     telephone: "(809)-948-4848",
-    url: "https://www.dominos.com.do/"
+    officialPage: "https://www.dominos.com.do/"
   },
   pizzarelli: {
     startHour: 11,
