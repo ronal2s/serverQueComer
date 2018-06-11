@@ -52,7 +52,7 @@ var restaurantsSantiagoData = {
   burgerking: {
     startHour: 7, 
     finalHour: 23,
-    telephone: "(809)-732-0800", 
+    telephone: "(809)-582-2652", 
     officialPage: "https://www.burgerking.com.do/"
   },
   fridays: {
@@ -74,6 +74,45 @@ var restaurantsSantiagoData = {
     officialPage: "https://www.lacarbuffets.com/"
   }
 }
+var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays"]
+var restaurantsSantoDomingoData = {
+  papajohns: {
+   startHour: 11,
+   finalHour: 23,
+   telephone: "(809)-489-7272",
+   officialPage: "http://www.papajohns.com.do/"
+  },
+  dominos: {
+    startHour: 11,
+    finalHour: 23,
+    telephone: "(809)-948-4848",
+    officialPage: "https://www.dominos.com.do/"
+  },
+  pizzarelli: {
+    startHour: 12,
+    finalHour: 23, 
+    telephone: "(809)-544-1111", 
+    officialPage: "http://www.pizzarelli.com.do/"
+  },
+  victorina: {
+    startHour: 10, 
+    finalHour: 23,
+    telephone: "(809)-222-9221", 
+    officialPage: "https://www.pollosvictorina.com.do/"
+  },
+  burgerking: {
+    startHour: 7, 
+    finalHour: 23,
+    telephone: "(809)-732-0800", 
+    officialPage: "https://www.burgerking.com.do/"
+  },
+  fridays: {
+    startHour: 12, 
+    finalHour: 23, 
+    telephone: "(809)-955-8443", 
+    officialPage: "http://fridaysdr.com.do/santiago/"
+  }
+}
 
 app.get("/santiagotitles", (req, res) =>
 {
@@ -81,9 +120,20 @@ app.get("/santiagotitles", (req, res) =>
   console.log(santiagoRestaurants)
 })
 
+app.get("/santodomingotitles", (req, res) =>
+{
+  res.send(santoDomingoRestaurants)
+  console.log(santoDomingoRestaurants)
+})
+
+
 app.get("/santiagoRestaurantsInfo", (req, res) =>
 {
   res.send(restaurantsSantiagoData);
+})
+app.get("/santoDomingoRestaurantsInfo", (req, res) =>
+{
+  res.send(restaurantsSantoDomingoData);
 })
 
 //Papajohns
