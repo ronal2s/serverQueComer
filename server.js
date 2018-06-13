@@ -3,6 +3,7 @@ const app = express();
 const rp = require("request-promise");
 const cheerio = require("cheerio");
 const port = process.env.PORT || 5000;
+const Axios = require("axios")
 
 const path = require("path");
 /*
@@ -19,9 +20,9 @@ var options = {
   }
 }
 //Santiago
-var imgPapajohns = [], imgFridays=[], imgDominos = [], imgVictorina = [], imgBurgerKing = [], 
+var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBurgerKing = [], 
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
-
+var instagramURL = "";
 
 var santiagoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
@@ -142,7 +143,7 @@ rp(options)
     //console.log($)
     $("img").each((i, elem) => {
       if (elem.attribs.src.match(/promo/g)) {
-        imgPapajohns.push({ img: ("http://www.papajohns.com.do/" + elem.attribs.src) });
+        imgPapajohns.push({img: ("http://www.papajohns.com.do/" + elem.attribs.src) });
       }
 
     })
@@ -152,7 +153,7 @@ rp(options)
     console.log(err);
   });
 
-
+//console.log(imgPapajohns)
 app.get("/papajohns", (req, res) => {
   res.send({ data: imgPapajohns })
 })
@@ -307,7 +308,7 @@ options.uri = "https://www.quiznos.com.do";
 rp(options)
   .then(($) => {
     $("img").each((i, elem) => {
-      console.log(elem.children)
+      //console.log(elem.children)
       if(elem.attribs.src != undefined)
       {
         if(elem.attribs.src.match(/media/g))
@@ -323,5 +324,48 @@ rp(options)
   app.get("/quiznos", (req, res) => {
     res.send({data: imgPizzarelli})
   })
+//Square One
+async function instagramPhotos (url) {
+  // It will contain our photos' links
+  const data = []
+  
+  try {
+      const userInfoSource = await Axios.get(url)
+
+      // userInfoSource.data contains the HTML from Axios
+      const jsonObject = userInfoSource.data.match(/<script type="text\/javascript">window\._sharedData = (.*)<\/script>/)[1].slice(0, -1)
+
+      const userInfo = JSON.parse(jsonObject)
+      // Retrieve only the first 10 results
+      const mediaArray = userInfo.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 10)
+      for (let media of mediaArray) {
+          const node = media.node
+          
+          // Process only if is an image
+          if ((node.__typename && node.__typename !== 'GraphImage')) {
+              continue
+          }
+
+          // Push the thumbnail src in the array
+          urlParts = node.thumbnail_src.split("%")
+          //console.log(urlParts[0])
+          data.push({img: urlParts[0]})
+          //console.log(res)
+      }
+  } catch (e) {
+      console.error('Unable to retrieve photos. Reason: ' + e.toString())
+  }
+  
+  return data
+}
+app.get("/squareone", (req, res) => {
+  instagramPhotos('https://www.instagram.com/squareonecafe/')
+  .then(function(data) {
+    console.log(data)
+    res.send(data)
+  })
+  .catch(err => console.log(err))
+})
+
 
 app.listen(port, () => console.log("Listen on fucking port " + port));
