@@ -42,61 +42,61 @@ var restaurantsSantiagoData = {
     startHour: 11,
     finalHour: 23,//Realmente cierra las 1 AM y 0 AM
     telephone: "(809)-226-0000",
-    officialPage: "http://kentucky.com.do"
+    officialPage: "https://www.instagram.com/kfcrepdom"
    },
   squareone: {
     startHour: 1,
     finalHour: 23,
     telephone: "(809)-241-5384",
-    officialPage: "https://www.square1rd.com/"
+    officialPage: "https://www.instagram.com/squareonecafe"
    },
   papajohns: {
    startHour: 11,
    finalHour: 23,
    telephone: "(809)-489-7272",
-   officialPage: "http://www.papajohns.com.do/"
+   officialPage: "https://www.instagram.com/papajohnsrd"
   },
   dominos: {
     startHour: 11,
     finalHour: 23,
     telephone: "(809)-948-4848",
-    officialPage: "https://www.dominos.com.do/"
+    officialPage: "https://www.instagram.com/dominosrd"
   },
   pizzarelli: {
     startHour: 11,
     finalHour: 23, 
     telephone: "(809)-581-8444", 
-    officialPage: "http://www.pizzarelli.com.do/"
+    officialPage: "https://www.instagram.com/pizzarellido/"
   },
   victorina: {
     startHour: 10, 
     finalHour: 23,
     telephone: "(809)-581-0404", 
-    officialPage: "https://www.pollosvictorina.com.do/"
+    officialPage: "https://www.instagram.com/p_victorina"
   },
   burgerking: {
     startHour: 7, 
     finalHour: 23,
     telephone: "(809)-582-2652", 
-    officialPage: "https://www.burgerking.com.do/"
+    officialPage: "https://www.instagram.com/burgerkingrd"
   },
   fridays: {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-971-8443", 
-    officialPage: "http://fridaysdr.com.do/santiago/"
+    officialPage: "https://www.instagram.com/fridaysrd"
   },
   tuquipe: {
     startHour: 16, 
     finalHour: 23, 
     telephone: "(809)-734-5304", 
-    officialPage: "http://www.tuquipe.com/"
+    officialPage: "https://www.instagram.com/tuquipe"
   },
   lacar: {
     startHour: 8, 
     finalHour: 18, 
     telephone: "(809)-581-4260", 
-    officialPage: "https://www.lacarbuffets.com/"
+    officialPage: "https://www.instagram.com/lacarbuffet"
   }
 }
 
@@ -112,43 +112,43 @@ var restaurantsSantoDomingoData = {
     startHour: 11,
     finalHour: 23,//es a las 0 am y 1 am
     telephone: "(809)-508-0000",
-    officialPage: "http://kentucky.com.do"
+    officialPage: "https://www.instagram.com/kfcrepdom"
    },
   papajohns: {
    startHour: 11,
    finalHour: 23,
    telephone: "(809)-489-7272",
-   officialPage: "http://www.papajohns.com.do/"
+   officialPage: "https://www.instagram.com/papajohnsrd"
   },
   dominos: {
     startHour: 11,
     finalHour: 23,
     telephone: "(809)-948-4848",
-    officialPage: "https://www.dominos.com.do/"
+    officialPage: "https://www.instagram.com/dominosrd"
   },
   pizzarelli: {
     startHour: 12,
     finalHour: 23, 
     telephone: "(809)-544-1111", 
-    officialPage: "http://www.pizzarelli.com.do/"
+    officialPage: "https://www.instagram.com/pizzarellido/"
   },
   victorina: {
     startHour: 10, 
     finalHour: 23,
     telephone: "(809)-222-9221", 
-    officialPage: "https://www.pollosvictorina.com.do/"
+    officialPage: "https://www.instagram.com/p_victorina"
   },
   burgerking: {
     startHour: 7, 
     finalHour: 23,
     telephone: "(809)-732-0800", 
-    officialPage: "https://www.burgerking.com.do/"
+    officialPage: "https://www.instagram.com/burgerkingrd"
   },
   fridays: {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-955-8443", 
-    officialPage: "http://fridaysdr.com.do/santiago/"
+    officialPage: "https://www.instagram.com/fridaysrd"
   }
 }
 
@@ -370,7 +370,7 @@ app.get("/kfc", (req, res) => {
 })
 
 //212NYPizza
-app.get("/212nypizza", (req, res) => {
+app.get("/nypizza", (req, res) => {
   instagramPhotos('https://www.instagram.com/212nypizza/',5)
   .then(function(data) {
     res.send({data: data})
