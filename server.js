@@ -266,49 +266,49 @@ rp(options)
     res.send({data: imgPizzarelli})
   })
  //Fridays 1
- options.uri = "http://fridaysdr.com.do/santiago/promociones/cena-para-2";
-rp(options)
-  .then(($) => {
-    $("img").each((i, elem) => {
-      if(elem.attribs.src.match(/promociones/g))
-      {
-        //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-        imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-      }
-    })
-  })
-  .catch(err => console.log(err))
-  //2
-  options.uri = "http://fridaysdr.com.do/santiago/promociones/menu-lunch";
-  rp(options)
-    .then(($) => {
-      $("img").each((i, elem) => {
-        if(elem.attribs.src.match(/Web-Lunch/g))
-        {
-          //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-          imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-        }
-      })
-    })
-    .catch(err => console.log(err))
-  //3
-  options.uri = "http://fridaysdr.com.do/santiago/promociones/happy-hour";
-  rp(options)
-    .then(($) => {
-      $("img").each((i, elem) => {
-        if(elem.attribs.src.match(/promociones/g))
-        {
-          //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-          imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-        }
-      })
-    })
-    .catch(err => console.log(err))
+//  options.uri = "http://fridaysdr.com.do/santiago/promociones/cena-para-2";
+// rp(options)
+//   .then(($) => {
+//     $("img").each((i, elem) => {
+//       if(elem.attribs.src.match(/promociones/g))
+//       {
+//         //console.log("http://fridaysdr.com.do" + elem.attribs.src)
+//         imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
+//       }
+//     })
+//   })
+//   .catch(err => console.log(err))
+//   //2
+//   options.uri = "http://fridaysdr.com.do/santiago/promociones/menu-lunch";
+//   rp(options)
+//     .then(($) => {
+//       $("img").each((i, elem) => {
+//         if(elem.attribs.src.match(/Web-Lunch/g))
+//         {
+//           //console.log("http://fridaysdr.com.do" + elem.attribs.src)
+//           imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
+//         }
+//       })
+//     })
+//     .catch(err => console.log(err))
+//   //3
+//   options.uri = "http://fridaysdr.com.do/santiago/promociones/happy-hour";
+//   rp(options)
+//     .then(($) => {
+//       $("img").each((i, elem) => {
+//         if(elem.attribs.src.match(/promociones/g))
+//         {
+//           //console.log("http://fridaysdr.com.do" + elem.attribs.src)
+//           imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
+//         }
+//       })
+//     })
+//     .catch(err => console.log(err))
   
 
-  app.get("/fridays", (req, res) => {
-    res.send({data: imgFridays})
-  })
+//   app.get("/fridays", (req, res) => {
+//     res.send({data: imgFridays})
+//   })
 //Quiznos
 options.uri = "https://www.quiznos.com.do";
 rp(options)
@@ -331,7 +331,7 @@ rp(options)
     res.send({data: imgPizzarelli})
   })
 //Square One
-async function instagramPhotos (url) {
+async function instagramPhotos (url, cantPhotos) {
   // It will contain our photos' links
   const data = []
   
@@ -343,7 +343,7 @@ async function instagramPhotos (url) {
 
       const userInfo = JSON.parse(jsonObject)
       // Retrieve only the first 10 results
-      const mediaArray = userInfo.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 10)
+      const mediaArray = userInfo.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, cantPhotos)
       for (let media of mediaArray) {
           const node = media.node
           
@@ -365,13 +365,46 @@ async function instagramPhotos (url) {
   return data
 }
 app.get("/squareone", (req, res) => {
-  instagramPhotos('https://www.instagram.com/squareonecafe/')
+  instagramPhotos('https://www.instagram.com/squareonecafe/',10)
   .then(function(data) {
-    console.log(data)
     res.send({data: data})
   })
   .catch(err => console.log(err))
 })
 
+//KFC
+app.get("/kfc", (req, res) => {
+  instagramPhotos('https://www.instagram.com/kfcrepdom/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+
+//212NYPizza
+app.get("/212nypizza", (req, res) => {
+  instagramPhotos('https://www.instagram.com/212nypizza/',5)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+
+//Fridays
+app.get("/fridays", (req, res) => {
+  instagramPhotos('https://www.instagram.com/fridaysrd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Taco Bell
+app.get("/tacobell", (req, res) => {
+  instagramPhotos('https://www.instagram.com/tacobellrd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
 
 app.listen(port, () => console.log("Listen on fucking port " + port));
