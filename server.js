@@ -24,8 +24,14 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  squareone: {
+    startHour: 1,
+    finalHour: 23,
+    telephone: "(809)-241-5384",
+    officialPage: "https://www.square1rd.com/"
+   },
   papajohns: {
    startHour: 11,
    finalHour: 23,
@@ -362,7 +368,7 @@ app.get("/squareone", (req, res) => {
   instagramPhotos('https://www.instagram.com/squareonecafe/')
   .then(function(data) {
     console.log(data)
-    res.send(data)
+    res.send({data: data})
   })
   .catch(err => console.log(err))
 })
