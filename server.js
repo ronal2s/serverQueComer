@@ -24,8 +24,26 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays", "KFC","Taco bell", "NY Pizza","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  nypizza: {
+    startHour: 17,
+    finalHour: 23,
+    telephone: "(829)-581-1212",
+    officialPage: "https://www.instagram.com/212nypizza/"
+   },
+  tacobell: {
+    startHour: 11,
+    finalHour: 23,//Realmente cierra las 0 AM
+    telephone: "(809)-247-4390",
+    officialPage: "https://www.instagram.com/tacobellrd/"
+   },
+  kfc: {
+    startHour: 11,
+    finalHour: 23,//Realmente cierra las 1 AM y 0 AM
+    telephone: "(809)-226-0000",
+    officialPage: "http://kentucky.com.do"
+   },
   squareone: {
     startHour: 1,
     finalHour: 23,
@@ -81,8 +99,21 @@ var restaurantsSantiagoData = {
     officialPage: "https://www.lacarbuffets.com/"
   }
 }
-var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays"]
+
+var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays", "KFC","Taco bell"]
 var restaurantsSantoDomingoData = {
+  tacobell: {
+    startHour: 10,
+    finalHour: 23,
+    telephone: "(809)-221-3263",
+    officialPage: "https://www.instagram.com/tacobellrd/"
+   },
+  kfc: {
+    startHour: 11,
+    finalHour: 23,//es a las 0 am y 1 am
+    telephone: "(809)-508-0000",
+    officialPage: "http://kentucky.com.do"
+   },
   papajohns: {
    startHour: 11,
    finalHour: 23,
@@ -265,50 +296,7 @@ rp(options)
   app.get("/pizzarelli", (req, res) => {
     res.send({data: imgPizzarelli})
   })
- //Fridays 1
-//  options.uri = "http://fridaysdr.com.do/santiago/promociones/cena-para-2";
-// rp(options)
-//   .then(($) => {
-//     $("img").each((i, elem) => {
-//       if(elem.attribs.src.match(/promociones/g))
-//       {
-//         //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-//         imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-//       }
-//     })
-//   })
-//   .catch(err => console.log(err))
-//   //2
-//   options.uri = "http://fridaysdr.com.do/santiago/promociones/menu-lunch";
-//   rp(options)
-//     .then(($) => {
-//       $("img").each((i, elem) => {
-//         if(elem.attribs.src.match(/Web-Lunch/g))
-//         {
-//           //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-//           imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-//         }
-//       })
-//     })
-//     .catch(err => console.log(err))
-//   //3
-//   options.uri = "http://fridaysdr.com.do/santiago/promociones/happy-hour";
-//   rp(options)
-//     .then(($) => {
-//       $("img").each((i, elem) => {
-//         if(elem.attribs.src.match(/promociones/g))
-//         {
-//           //console.log("http://fridaysdr.com.do" + elem.attribs.src)
-//           imgFridays.push({img: "http://fridaysdr.com.do" + elem.attribs.src})
-//         }
-//       })
-//     })
-//     .catch(err => console.log(err))
-  
 
-//   app.get("/fridays", (req, res) => {
-//     res.send({data: imgFridays})
-//   })
 //Quiznos
 options.uri = "https://www.quiznos.com.do";
 rp(options)
