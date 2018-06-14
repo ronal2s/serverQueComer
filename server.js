@@ -24,8 +24,14 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays", "KFC","Taco bell", "NY Pizza","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", ,"NY Pizza", "Burger king", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  subway: {
+    startHour: 8,
+    finalHour: 23,
+    telephone: "(809)-226-2663",
+    officialPage: "https://www.instagram.com/subwayrepublicadominicana/"
+   },
   nypizza: {
     startHour: 17,
     finalHour: 23,
@@ -100,8 +106,14 @@ var restaurantsSantiagoData = {
   }
 }
 
-var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays", "KFC","Taco bell"]
+var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "Victorina", "Fridays", "KFC","Taco bell", "Subway"]
 var restaurantsSantoDomingoData = {
+  subway: {
+    startHour: 9,
+    finalHour: 23,//Cierra a las doce
+    telephone: "(809)-732-7000",
+    officialPage: "https://www.instagram.com/subwayrepublicadominicana/"
+   },
   tacobell: {
     startHour: 10,
     finalHour: 23,
