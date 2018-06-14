@@ -281,21 +281,21 @@ rp(options)
     res.send({data: imgLacar})
   })
  //Pizzarelli
- options.uri = "http://www.pizzarelli.com.do/ofertas/";
-rp(options)
-  .then(($) => {
-    $("img").each((i, elem) => {
-      if(elem.attribs.src.match(/ofertas/g))
-      {
-        //console.log(elem.attribs.src)
-        imgPizzarelli.push({img: elem.attribs.src})
-      }
-    })
-  })
-  .catch(err => console.log(err))
-  app.get("/pizzarelli", (req, res) => {
-    res.send({data: imgPizzarelli})
-  })
+//  options.uri = "http://www.pizzarelli.com.do/ofertas/";
+// rp(options)
+//   .then(($) => {
+//     $("img").each((i, elem) => {
+//       if(elem.attribs.src.match(/ofertas/g))
+//       {
+//         //console.log(elem.attribs.src)
+//         imgPizzarelli.push({img: elem.attribs.src})
+//       }
+//     })
+//   })
+//   .catch(err => console.log(err))
+//   app.get("/pizzarelli", (req, res) => {
+//     res.send({data: imgPizzarelli})
+//   })
 
 //Quiznos
 options.uri = "https://www.quiznos.com.do";
@@ -389,6 +389,22 @@ app.get("/fridays", (req, res) => {
 //Taco Bell
 app.get("/tacobell", (req, res) => {
   instagramPhotos('https://www.instagram.com/tacobellrd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Pizzarelli
+app.get("/pizzarelli", (req, res) => {
+  instagramPhotos('https://www.instagram.com/pizzarellido/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Subway
+app.get("/subway", (req, res) => {
+  instagramPhotos('https://www.instagram.com/subwayrepublicadominicana/',10)
   .then(function(data) {
     res.send({data: data})
   })
