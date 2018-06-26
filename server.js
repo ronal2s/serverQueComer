@@ -24,8 +24,14 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One", "Platanitos","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  platanitos: {
+    startHour: 17,
+    finalHour: 23,//24
+    telephone: "(809)-806-8738",
+    officialPage: "https://www.instagram.com/platanitos_santiago/"
+   },
   mcdonalds: {
     startHour: 1,
     finalHour: 23,//24 horas
@@ -437,6 +443,14 @@ app.get("/subway", (req, res) => {
 //Mcdonalds
 app.get("/mcdonalds", (req, res) => {
   instagramPhotos('https://www.instagram.com/mcdonaldsrd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Platanitos
+app.get("/mcdonalds", (req, res) => {
+  instagramPhotos('https://www.instagram.com/platanitos_santiago/',10)
   .then(function(data) {
     res.send({data: data})
   })
