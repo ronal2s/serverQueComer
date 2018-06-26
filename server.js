@@ -449,7 +449,7 @@ app.get("/mcdonalds", (req, res) => {
   .catch(err => console.log(err))
 })
 //Platanitos
-app.get("/mcdonalds", (req, res) => {
+app.get("/platanitos", (req, res) => {
   instagramPhotos('https://www.instagram.com/platanitos_santiago/',10)
   .then(function(data) {
     res.send({data: data})
