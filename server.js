@@ -30,91 +30,106 @@ var restaurantsSantiagoData = {
     startHour: 17,
     finalHour: 23,//24
     telephone: "(809)-806-8738",
-    officialPage: "https://www.instagram.com/platanitos_santiago/"
+    officialPage: "https://www.instagram.com/platanitos_santiago/",//19.463836, -70.690197,
+    location: {latitude: 19.463836, longitude: -70.690197, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   mcdonalds: {
     startHour: 1,
     finalHour: 23,//24 horas
     telephone: "(829)-234-0007",
-    officialPage: "https://www.instagram.com/mcdonaldsrd/"
+    officialPage: "https://www.instagram.com/mcdonaldsrd/",  
+    location: {latitude: 19.461294, longitude: -70.685836, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   subway: {
     startHour: 8,
     finalHour: 23,
     telephone: "(809)-226-2663",
-    officialPage: "https://www.instagram.com/subwayrepublicadominicana/"
+    officialPage: "https://www.instagram.com/subwayrepublicadominicana/",
+    location: {latitude: 19.456203, longitude: -70.685116, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   nypizza: {
     startHour: 17,
     finalHour: 23,
-    telephone: "(829)-581-1212",
-    officialPage: "https://www.instagram.com/212nypizza/"
+    telephone: "(829)-581-1212",//19.446514, -70.674309
+    officialPage: "https://www.instagram.com/212nypizza/",
+    location: {latitude: 19.446514, longitude: -70.674309, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   tacobell: {
     startHour: 11,
     finalHour: 23,//Realmente cierra las 0 AM
     telephone: "(809)-247-4390",
-    officialPage: "https://www.instagram.com/tacobellrd/"
+    officialPage: "https://www.instagram.com/tacobellrd/",//19.457528, -70.691482
+    location: {latitude: 19.457528, longitude: -70.691482, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   kfc: {
     startHour: 11,
     finalHour: 23,//Realmente cierra las 1 AM y 0 AM
     telephone: "(809)-226-0000",
-    officialPage: "https://www.instagram.com/kfcrepdom"
+    officialPage: "https://www.instagram.com/kfcrepdom",//19.461136, -70.686402
+    location: {latitude: 19.461136, longitude: -70.686402, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   squareone: {
     startHour: 1,
     finalHour: 23,
     telephone: "(809)-241-5384",
-    officialPage: "https://www.instagram.com/squareonecafe"
+    officialPage: "https://www.instagram.com/squareonecafe",//19.442452, -70.687657
+    location: {latitude: 19.442452, longitude: -70.687657, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
    },
   papajohns: {
    startHour: 11,
    finalHour: 23,
    telephone: "(809)-489-7272",
-   officialPage: "https://www.instagram.com/papajohnsrd"
+   officialPage: "https://www.instagram.com/papajohnsrd",//19.457802, -70.684403
+   location: {latitude: 19.457802, longitude: -70.684403, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   dominos: {
     startHour: 11,
     finalHour: 23,
     telephone: "(809)-948-4848",
-    officialPage: "https://www.instagram.com/dominosrd"
+    officialPage: "https://www.instagram.com/dominosrd",//19.458515, -70.680903
+    location: {latitude: 19.458515, longitude: -70.680903, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   pizzarelli: {
     startHour: 11,
     finalHour: 23, 
     telephone: "(809)-581-8444", 
-    officialPage: "https://www.instagram.com/pizzarellido/"
+    officialPage: "https://www.instagram.com/pizzarellido/",//19.453774, -70.685951
+    location: {latitude: 19.453774, longitude: -70.685951, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   victorina: {
     startHour: 10, 
     finalHour: 23,
     telephone: "(809)-581-0404", 
-    officialPage: "https://www.instagram.com/p_victorina"
+    officialPage: "https://www.instagram.com/p_victorina",//19.460577, -70.687076
+    location: {latitude: 19.460577, longitude: -70.687076, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   burgerking: {
     startHour: 7, 
     finalHour: 23,
     telephone: "(809)-582-2652", 
-    officialPage: "https://www.instagram.com/burgerkingrd"
+    officialPage: "https://www.instagram.com/burgerkingrd",//19.458858, -70.686258
+    location: {latitude: 19.458858, longitude: -70.686258, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   fridays: {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-971-8443", 
-    officialPage: "https://www.instagram.com/fridaysrd"
+    officialPage: "https://www.instagram.com/fridaysrd",//19.466145, -70.687099
+    location: {latitude: 19.466145, longitude: -70.687099, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   tuquipe: {
     startHour: 16, 
     finalHour: 23, 
     telephone: "(809)-734-5304", 
-    officialPage: "https://www.instagram.com/tuquipe"
+    officialPage: "https://www.instagram.com/tuquipe",//19.461817, -70.694560
+    location: {latitude: 19.461817, longitude: -70.694560, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   lacar: {
     startHour: 8, 
     finalHour: 18, 
     telephone: "(809)-581-4260", 
-    officialPage: "https://www.instagram.com/lacarbuffet"
+    officialPage: "https://www.instagram.com/lacarbuffet",//19.459726, -70.694572
+    location: {latitude: 19.459726, longitude: -70.694572, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   }
 }
 
