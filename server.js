@@ -230,25 +230,25 @@ app.get("/santoDomingoRestaurantsInfo", (req, res) =>
 })
 
 //Papajohns
-rp(options)
-  .then(($) => {
-    //console.log($)
-    $("img").each((i, elem) => {
-      if (elem.attribs.src.match(/promo/g)) {
-        imgPapajohns.push({img: ("http://www.papajohns.com.do/" + elem.attribs.src) });
-      }
+// rp(options)
+//   .then(($) => {
+//     //console.log($)
+//     $("img").each((i, elem) => {
+//       if (elem.attribs.src.match(/promo/g)) {
+//         imgPapajohns.push({img: ("http://www.papajohns.com.do/" + elem.attribs.src) });
+//       }
 
-    })
+//     })
 
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-//console.log(imgPapajohns)
-app.get("/papajohns", (req, res) => {
-  res.send({ data: imgPapajohns })
-})
+// //console.log(imgPapajohns)
+// app.get("/papajohns", (req, res) => {
+//   res.send({ data: imgPapajohns })
+// })
 
 //Dominos
 options.uri = "http://dominos.com.do.hypestat.com/"
@@ -476,6 +476,14 @@ app.get("/mcdonalds", (req, res) => {
 //Platanitos
 app.get("/platanitos", (req, res) => {
   instagramPhotos('https://www.instagram.com/platanitos_santiago/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Papajohns
+app.get("/papajohns", (req, res) => {
+  instagramPhotos('https://www.instagram.com/papajohnsrd/',10)
   .then(function(data) {
     res.send({data: data})
   })
