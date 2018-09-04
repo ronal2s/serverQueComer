@@ -24,7 +24,7 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One", "Platanitos","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
   platanitos: {
     startHour: 17,
