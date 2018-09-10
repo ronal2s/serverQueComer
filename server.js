@@ -24,8 +24,50 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Quiznos", "Fridays", "KFC","Taco bell", "Subway","Nori Sushi" ,"Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Pizza Hut","NY Pizza", "Arte Pizza","Burger king","McDonalds", "Victorina", "Quiznos", "Jade Teriyaki", "Fridays", "KFC","Taco bell", "Subway","Nori Sushi" , "Dogos", "Puchos Mofongo","Cosita Rica","Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  cositarica: {
+    startHour: 11,
+    finalHour: 19,
+    telephone: "(809)-581-5830",
+    officialPage: "https://www.instagram.com/cositaricadr/",  
+    location: {latitude: 19.450489, longitude: -70.697117, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  puchosmofongo: {
+    startHour: 12,
+    finalHour: 23,
+    telephone: "(809)-583-2000",
+    officialPage: "https://www.instagram.com/puchosmofongo/", 
+    location: {latitude: 19.464632, longitude: -70.692671, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  pizzahut: {
+    startHour: 11,
+    finalHour: 23,
+    telephone: "829-200-2020",
+    officialPage: "https://www.instagram.com/pizzahutrd/",
+    location: {latitude: 19.458490, longitude: -70.680660, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  jadeteriyaki: {
+    startHour: 8,
+    finalHour: 23,
+    telephone: "(809)-825-8888",
+    officialPage: "https://www.instagram.com/jadeteriyakird/",
+    location: {latitude: 19.458503, longitude: -70.680636, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  artepizza: {
+    startHour: 18,
+    finalHour: 23,
+    telephone: "(809)-582-4868",
+    officialPage: "https://www.instagram.com/artepizzard/",
+    location: {latitude: 19.460828, longitude: -70.690971, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  dogos: {
+    startHour: 6,
+    finalHour: 23,//24
+    telephone: "(829)-844-8962",
+    officialPage: "https://www.instagram.com/dogosuf/",//
+    location: {latitude: 19.456885, longitude: -70.663539, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
   norisushi: {
     startHour: 18,
     finalHour: 23,//24
@@ -147,8 +189,22 @@ var restaurantsSantiagoData = {
   }
 }
 
-var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "McDonalds","Victorina", "Quiznos", "Fridays", "KFC","Taco bell", "Subway","Loop Friends" ,"Don Tato", "La Markesina"]
+var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizza Hut","Pizzarelli", "Burger king", "McDonalds","Victorina", "Quiznos", "Jade Teriyaki","Fridays", "KFC","Taco bell", "Subway","Loop Friends" ,"Don Tato", "La Markesina"]
 var restaurantsSantoDomingoData = {
+  pizzahut: {
+    startHour: 11,
+    finalHour: 23,
+    telephone: "(809)-620-2020",
+    officialPage: "https://www.instagram.com/pizzahutrd/", 
+    location: {latitude: 18.480281, longitude: -69.927860, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  jadeteriyaki: {
+    startHour: 8,
+    finalHour: 23,//1:30 AM
+    telephone: "(809)-682-8888",
+    officialPage: "https://www.instagram.com/jadeteriyakird/",
+    location: {latitude: 18.477909, longitude: -69.907570, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
   lamarkesina: {
     startHour: 18,
     finalHour: 23,//1:30 AM
@@ -566,6 +622,54 @@ app.get("/norisushi", (req, res) => {
 //Quiznos
 app.get("/quiznos", (req, res) => {
   instagramPhotos('https://www.instagram.com/quiznos_rd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Dogos
+app.get("/dogos", (req, res) => {
+  instagramPhotos('https://www.instagram.com/dogosuf/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Arte pizza
+app.get("/artepizza", (req, res) => {
+  instagramPhotos('https://www.instagram.com/artepizzard/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Jade Teriyaki
+app.get("/jadeteriyaki", (req, res) => {
+  instagramPhotos('https://www.instagram.com/jadeteriyakird/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Pizza hut
+app.get("/pizzahut", (req, res) => {
+  instagramPhotos('https://www.instagram.com/pizzahutrd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Puchos Mofongo
+app.get("/puchosmofongo", (req, res) => {
+  instagramPhotos('https://www.instagram.com/puchosmofongo/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Cosita Rica
+app.get("/cositarica", (req, res) => {
+  instagramPhotos('https://www.instagram.com/cositaricadr/',10)
   .then(function(data) {
     res.send({data: data})
   })
