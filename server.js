@@ -412,9 +412,9 @@ rp(options)
     })
   })
   .catch(err => console.log(err))
-  app.get("/quiznos", (req, res) => {
-    res.send({data: imgPizzarelli})
-  })
+  // app.get("/quiznos", (req, res) => {
+  //   res.send({data: imgPizzarelli})
+  // })
 //Square One
 async function instagramPhotos (url, cantPhotos) {
   // It will contain our photos' links
