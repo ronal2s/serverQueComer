@@ -24,8 +24,22 @@ var imgPapajohns = [],  imgFridays=[], imgDominos = [], imgVictorina = [], imgBu
 imgTuQuipe=[], imgLacar=[], imgPizzarelli=[];
 var instagramURL = "";
 
-var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Fridays", "KFC","Taco bell", "Subway","Tu quipe","Lacar"]
+var santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "NY Pizza", "Burger king","McDonalds", "Victorina", "Quiznos", "Fridays", "KFC","Taco bell", "Subway","Nori Sushi" ,"Tu quipe","Lacar"]
 var restaurantsSantiagoData = {
+  norisushi: {
+    startHour: 18,
+    finalHour: 23,//24
+    telephone: "(849)-340-0748",
+    officialPage: "https://www.instagram.com/norisushisti/",//
+    location: {latitude: 19.461331, longitude: -70.682823, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  quiznos: {
+    startHour: 10,
+    finalHour: 23,//24
+    telephone: "(809)-233-9483",
+    officialPage: "https://www.instagram.com/quiznos_rd/",//,19.454067, -70.685462
+    location: {latitude: 19.454067, longitude: -70.685462, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
   platanitos: {
     startHour: 17,
     finalHour: 23,//24
@@ -133,8 +147,36 @@ var restaurantsSantiagoData = {
   }
 }
 
-var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "McDonalds","Victorina", "Fridays", "KFC","Taco bell", "Subway"]
+var santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizzarelli", "Burger king", "McDonalds","Victorina", "Quiznos", "Fridays", "KFC","Taco bell", "Subway","Loop Friends" ,"Don Tato", "La Markesina"]
 var restaurantsSantoDomingoData = {
+  lamarkesina: {
+    startHour: 18,
+    finalHour: 23,//1:30 AM
+    telephone: "(809)-636-4543",
+    officialPage: "https://www.instagram.com/lamarkesina/",
+    location: {latitude: 18.477909, longitude: -69.907570, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  loopfriends: {
+    startHour: 18,
+    finalHour: 23,
+    telephone: "(809)-937-3121",
+    officialPage: "https://www.instagram.com/looprd/",
+    location: {latitude: 18.448687, longitude: -69.959658, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  dontato: {
+    startHour: 0,
+    finalHour: 23,//24
+    telephone: "(809)-262-0675",
+    officialPage: "https://www.instagram.com/dontatord/",
+    location: {latitude: 18.489120, longitude: -69.914530, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  quiznos: {
+    startHour: 11,
+    finalHour: 23,//24
+    telephone: "(809)-987-7777",
+    officialPage: "https://www.instagram.com/quiznos_rd/",
+    location: {latitude: 18.477074, longitude: -69.933429, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
   mcdonalds: {
     startHour: 7,
     finalHour: 23,//Cierra a las doce
@@ -489,4 +531,46 @@ app.get("/papajohns", (req, res) => {
   })
   .catch(err => console.log(err))
 })
+//la markesina
+app.get("/lamarkesina", (req, res) => {
+  instagramPhotos('https://www.instagram.com/lamarkesina/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Loop Friends
+app.get("/loopfriends", (req, res) => {
+  instagramPhotos('https://www.instagram.com/looprd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Don Tato
+app.get("/dontato", (req, res) => {
+  instagramPhotos('https://www.instagram.com/dontatord/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Nori Sushi
+app.get("/norisushi", (req, res) => {
+  instagramPhotos('https://www.instagram.com/norisushisti/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+//Quiznos
+app.get("/quiznos", (req, res) => {
+  instagramPhotos('https://www.instagram.com/quiznos_rd/',10)
+  .then(function(data) {
+    res.send({data: data})
+  })
+  .catch(err => console.log(err))
+})
+
+
 app.listen(port, () => console.log("Listen on fucking port " + port));
