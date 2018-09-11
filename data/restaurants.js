@@ -167,8 +167,8 @@ const restaurantsSantiagoData = {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-724-2433",
-    officialPage: "https://www.instagram.com/chefpepperrd", 
-    location: {latitude: 19.460697, longitude: -70.689617, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+    officialPage: "https://www.instagram.com/chefpepperrd",  
+    location: {latitude: 19.460518, longitude: -70.689703, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   pizzahouse: {
     startHour: 9, 
@@ -291,15 +291,15 @@ const restaurantsSantoDomingoData = {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-955-8443", 
-    officialPage: "https://www.instagram.com/fridaysrd",//, 
+    officialPage: "https://www.instagram.com/fridaysrd",
     location: {latitude: 18.469362, longitude: -69.939120, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },  //desde aqui
   chefpepper: {
     startHour: 12, 
     finalHour: 23, 
     telephone: "(809)-565-4068",
-    officialPage: "https://www.instagram.com/chefpepperrd", 
-    location: {latitude: 18.453588, longitude: -69.943507, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+    officialPage: "https://www.instagram.com/chefpepperrd",  
+    location: {latitude: 18.453196, longitude: -69.944022, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
   },
   pizzahouse: {
     startHour: 9, 

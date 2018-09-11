@@ -5,7 +5,12 @@ const Axios = require("axios")
 const { restaurantsSantoDomingoData,
   santoDomingoRestaurants,
   restaurantsSantiagoData,
-  santiagoRestaurants
+  santiagoRestaurants,
+  lavegaRestaurants,
+  restaurantsLaVegaData,
+  sfcoMacorisRestaurants,
+  restaurantsSfcoMacorisData
+
 } = require("./data/restaurants");
 const {routesArray} = require("./routes");
 let miCache = {}
@@ -25,6 +30,14 @@ app.get("/santodomingotitles", (req, res) => {
   res.send(santoDomingoRestaurants)
   
 })
+app.get("/lavegatitles", (req, res) => {
+  res.send(lavegaRestaurants)
+  
+})
+app.get("/sfcomacoristitles", (req, res) => {
+  res.send(sfcoMacorisRestaurants)
+  
+})
 
 
 app.get("/santiagoRestaurantsInfo", (req, res) => {
@@ -32,6 +45,12 @@ app.get("/santiagoRestaurantsInfo", (req, res) => {
 })
 app.get("/santoDomingoRestaurantsInfo", (req, res) => {
   res.send(restaurantsSantoDomingoData);
+})
+app.get("/sfcoMacorisRestaurantsInfo", (req, res) => {
+  res.send(restaurantsSfcoMacorisData);
+})
+app.get("/laVegaRestaurantsInfo", (req, res) => {
+  res.send(restaurantsLaVegaData);
 })
 
 
