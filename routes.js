@@ -75,7 +75,64 @@ const routesArray = [
       route:"/cositarica",
       instagramUrl:"https://www.instagram.com/cositaricadr"
     },
+    {
+      route:"/tuquipe",
+      instagramUrl:"https://www.instagram.com/tuquipe"
+    },
+    {
+      route:"/lacar",
+      instagramUrl:"https://www.instagram.com/lacar"
+    },
+    {
+      route:"/dominos",
+      instagramUrl:"https://www.instagram.com/dominosrd"
+    },
+    {
+      route:"/dominos",
+      instagramUrl:"https://www.instagram.com/dominosrd"
+    },
+    {
+      route:"/nypizza",
+      instagramUrl:"https://www.instagram.com/212nypizza"
+    },
+    {
+      route:"/nypizza",
+      instagramUrl:"https://www.instagram.com/212nypizza"
+    },
+    {
+      route:"/burgerking",
+      instagramUrl:"https://www.instagram.com/burgerkingrd"
+    },
+    {
+      route:"/burgerking",
+      instagramUrl:"https://www.instagram.com/burgerkingrd"
+    },
+    {
+      route:"/victorina",
+      instagramUrl:"https://www.instagram.com/p_victorina"
+    },
+    {
+      route:"/portobellorestaurant",
+      instagramUrl:"https://www.instagram.com/portobello_restaurant"
+    },
+    {
+      route:"/chefpepper",
+      instagramUrl:"https://www.instagram.com/chefpepperrd"
+    },
+    {
+      route:"/pizzahouse",
+      instagramUrl:"https://www.instagram.com/thepizzahousedom"
+    },
+    {
+      route:"/mrgrilled",
+      instagramUrl:"https://www.instagram.com/mrgrilled"
+    },
+    {
+      route:"/restaurantdorado",
+      instagramUrl:"https://www.instagram.com/restaurantdorado"
+    },
+
 ]
-
-
+/*
+*/
 module.exports = {routesArray};

@@ -37,7 +37,10 @@ app.get("/santoDomingoRestaurantsInfo", (req, res) => {
 
 async function instagramPhotos(url, cantPhotos) {
   // It will contain our photos' links
+  
+  console.time("[START]")
   if(miCache[url]){
+    console.timeEnd("[START]")
     return miCache[url]
   }
   const data = []
@@ -69,6 +72,7 @@ async function instagramPhotos(url, cantPhotos) {
     console.error('Unable to retrieve photos. Reason: ' + e.toString())
   }
   
+  console.timeEnd("[START]")
   
   miCache[url] = data;
   return data

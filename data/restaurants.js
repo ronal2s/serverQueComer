@@ -1,4 +1,6 @@
-const santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Pizza Hut","NY Pizza", "Arte Pizza","Burger king","McDonalds", "Victorina", "Quiznos", "Jade Teriyaki", "Fridays", "KFC","Taco bell", "Subway","Nori Sushi" , "Dogos", "Puchos Mofongo","Cosita Rica","Tu quipe","Lacar"]
+const santiagoRestaurants = ["Square One","Papa Johns", "Dominos", "Pizzarelli", "Pizza Hut","NY Pizza","Pizza House","Arte Pizza","Burger king",
+"McDonalds", "Chef Pepper","Victorina", "Quiznos", "Jade Teriyaki", "Fridays", "KFC","Taco bell", "Subway","Nori Sushi" , "Dogos", "Puchos Mofongo",
+"Cosita Rica","Tu quipe","Lacar"]
 const restaurantsSantiagoData = {
   cositarica: {
     startHour: 11,
@@ -160,10 +162,25 @@ const restaurantsSantiagoData = {
     telephone: "(809)-581-4260", 
     officialPage: "https://www.instagram.com/lacarbuffet",//19.459726, -70.694572
     location: {latitude: 19.459726, longitude: -70.694572, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
-  }
+  },
+  chefpepper: {
+    startHour: 12, 
+    finalHour: 23, 
+    telephone: "(809)-724-2433",
+    officialPage: "https://www.instagram.com/chefpepperrd", 
+    location: {latitude: 19.460697, longitude: -70.689617, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  pizzahouse: {
+    startHour: 9, 
+    finalHour: 23, 
+    telephone: "(809)-971-9999",
+    officialPage: "https://www.instagram.com/thepizzahousedom", 
+    location: {latitude: 19.457485, longitude: -70.698757, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
 }
 
-const santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizza Hut","Pizzarelli", "Burger king", "McDonalds","Victorina", "Quiznos", "Jade Teriyaki","Fridays", "KFC","Taco bell", "Subway","Loop Friends" ,"Don Tato", "La Markesina"]
+const santoDomingoRestaurants = ["Papa Johns", "Dominos", "Pizza Hut","Pizzarelli", "Pizza House","Burger king", "McDonalds", "Chef Pepper",
+"Victorina", "Quiznos", "Jade Teriyaki","Fridays", "KFC","Taco bell", "Subway","Loop Friends" ,"Don Tato", "La Markesina"]
 const restaurantsSantoDomingoData = {
   pizzahut: {
     startHour: 11,
@@ -276,12 +293,117 @@ const restaurantsSantoDomingoData = {
     telephone: "(809)-955-8443", 
     officialPage: "https://www.instagram.com/fridaysrd",//, 
     location: {latitude: 18.469362, longitude: -69.939120, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
-  }
+  },  //desde aqui
+  chefpepper: {
+    startHour: 12, 
+    finalHour: 23, 
+    telephone: "(809)-565-4068",
+    officialPage: "https://www.instagram.com/chefpepperrd", 
+    location: {latitude: 18.453588, longitude: -69.943507, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  pizzahouse: {
+    startHour: 9, 
+    finalHour: 22, 
+    telephone: "(809)-565-8104",
+    officialPage: "https://www.instagram.com/thepizzahousedom", 
+    location: {latitude: 18.478745, longitude: -69.939630, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
 }
+const sfcoMacorisRestaurants = ["Restaurant Dorado", "Portobello Restaurant","Pizza Hut", "Dominos", "Subway","Burger king"]
+const restaurantsSfcoMacorisData =
+{
+  portobellorestaurant: {
+    startHour: 10, 
+    finalHour: 13, 
+    telephone: "(809)-588-6622",  
+    officialPage: "https://www.instagram.com/portobello_restaurant", 
+    location: {latitude: 19.289804, longitude: -70.262614, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  restaurantdorado: {
+    startHour: 10, 
+    finalHour: 23, 
+    telephone: "(809)-588-5991",  
+    officialPage: "https://www.instagram.com/restaurantdorado", 
+    location: {latitude: 19.289804, longitude: -70.262614, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  pizzahut: {
+    startHour: 11, 
+    finalHour: 23, 
+    telephone: "(809)-620-2020",
+    officialPage: "https://www.instagram.com/pizzahutrd", 
+    location: {latitude: 19.289574, longitude: -70.263820, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  dominos: {
+    startHour: 10, 
+    finalHour: 21, //21:30
+    telephone: "(809)-948-4848",
+    officialPage: "https://www.instagram.com/dominosrd", 
+    location: {latitude: 19.276571, longitude: -70.241241, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  subway: {
+    startHour: 7, 
+    finalHour: 23, 
+    telephone: "(809)-588-2476",
+    officialPage: "https://www.instagram.com/subwayrepublicadominicana", 
+    location: {latitude: 19.287701, longitude: -70.269248, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+  burgerking: {
+    startHour: 8, 
+    finalHour: 23, 
+    telephone: "(809)-244-0340",
+    officialPage: "https://www.instagram.com/burgerkingrd", 
+    location: {latitude: 19.289942, longitude: -70.262819, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  },
+}
+const lavegaRestaurants = ["Papa Johns", "Dominos", "Pizza House","Burger king"]
+const restaurantsLaVegaData =
+{
+  pizzahouse: {
+    startHour: 9, 
+    finalHour: 23, 
+    telephone: "(809)-573-6604",
+    officialPage: "https://www.instagram.com/thepizzahousedom", 
+    location: {latitude: 19.223105, longitude: -70.518145, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  }, 
+  dominos: {
+    startHour: 11, 
+    finalHour: 23, 
+    telephone: "(809)-948-4848",
+    officialPage: "https://www.instagram.com/dominosrd", 
+    location: {latitude: 19.220825, longitude: -70.517394, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  }, 
+  papajohns: {
+    startHour: 8, 
+    finalHour: 23, 
+    telephone: "(809) 620-7272",
+    officialPage: "https://www.instagram.com/papajohnsrd", 
+    location: {latitude: 19.225512, longitude: -70.518311, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  }, 
+  burgerking: {
+    startHour: 8, 
+    finalHour: 23, 
+    telephone: "NO HAY TELEFONO :(",
+    officialPage: "https://www.instagram.com/burgerkingrd", 
+    location: {latitude: 19.224092, longitude: -70.520602, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  }, 
+  macdonalds: {
+    startHour: 9, 
+    finalHour: 23, 
+    telephone: "NO HAY TELEFONO :(",
+    officialPage: "https://www.instagram.com/mcdonaldsrd", 
+    location: {latitude: 19.225837, longitude: -70.517425, latitudeDelta: 0.002, longitudeDelta: 0.0000001}
+  }, 
+}
+
+
 
 module.exports  = {
     santiagoRestaurants,
     restaurantsSantiagoData,
     santoDomingoRestaurants,
-    restaurantsSantoDomingoData
+    restaurantsSantoDomingoData,
+    lavegaRestaurants,
+    restaurantsLaVegaData,
+    sfcoMacorisRestaurants,
+    restaurantsSfcoMacorisData
 }
