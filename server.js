@@ -11,8 +11,10 @@ const { restaurantsSantoDomingoData,
   sfcoMacorisRestaurants,
   restaurantsSfcoMacorisData
 
-} = require("./data/restaurants");
-const {routesArray} = require("./routes");
+} = require("./data/restaurantsRD");
+const {sanjuanRestaurants, restaurantsSanJuanData} = './data/restaurantsPR'
+const {routesArrayRD} = require("./routesRD");
+const {routesArrayPR} = require("./routesPR");
 let miCache = {}
 
 
@@ -21,39 +23,44 @@ app.get("/wakeup",(req,res) => {
     res.send("ok")
 })
 
-app.get("/santiagotitles", (req, res) => {
+app.get("/rd/santiagotitles", (req, res) => {
   res.send(santiagoRestaurants)
   
 })
 
-app.get("/santodomingotitles", (req, res) => {
+//RD
+app.get("/rd/santodomingotitles", (req, res) => {
   res.send(santoDomingoRestaurants)
-  
 })
-app.get("/lavegatitles", (req, res) => {
+app.get("/rd/lavegatitles", (req, res) => {
   res.send(lavegaRestaurants)
-  
 })
-app.get("/sfcomacoristitles", (req, res) => {
+app.get("/rd/sfcomacoristitles", (req, res) => {
   res.send(sfcoMacorisRestaurants)
   
 })
 
 
-app.get("/santiagoRestaurantsInfo", (req, res) => {
+app.get("/rd/santiagoRestaurantsInfo", (req, res) => {
   res.send(restaurantsSantiagoData);
 })
-app.get("/santoDomingoRestaurantsInfo", (req, res) => {
+app.get("/rd/santoDomingoRestaurantsInfo", (req, res) => {
   res.send(restaurantsSantoDomingoData);
 })
-app.get("/sfcoMacorisRestaurantsInfo", (req, res) => {
+app.get("/rd/sfcoMacorisRestaurantsInfo", (req, res) => {
   res.send(restaurantsSfcoMacorisData);
 })
-app.get("/laVegaRestaurantsInfo", (req, res) => {
+app.get("/rd/laVegaRestaurantsInfo", (req, res) => {
   res.send(restaurantsLaVegaData);
 })
 
-
+//PR
+app.get("/pr/sanjuantitles", (req, res) => {
+  res.send(sanjuanRestaurants)
+})
+app.get("/pr/sanjuanRestaurantsInfo", (req, res) => {
+  res.send(restaurantsSanJuanData);
+})
 async function instagramPhotos(url, cantPhotos) {
   // It will contain our photos' links
   
@@ -97,7 +104,7 @@ async function instagramPhotos(url, cantPhotos) {
   return data
 }//wtf
 
-for(const route of routesArray){
+for(const route of routesArrayRD){
   app.get(route.route, async (req,res) =>{
     try{
      const data = await instagramPhotos(route.instagramUrl, 10)
@@ -108,6 +115,20 @@ for(const route of routesArray){
     }
   })
 }
+
+for(const route of routesArrayPR){
+  app.get(route.route, async (req,res) =>{
+    try{
+     const data = await instagramPhotos(route.instagramUrl, 10)
+     return res.send({ data: data })
+    }catch(err){
+      console.log(err)
+      return res.send({ error: err.message })
+    }
+  })
+}
+
+
 //Incluso, en mi instagram app, no puedo seguir a nadie me dice que tengo la acción bloqueada
 
 app.listen(port, () => console.log("Listen on port" + port));
